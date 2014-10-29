@@ -7,10 +7,18 @@ FROM Dockerfile directive and inherit from other images.
 
 Example Dockerfile where this is used:
 
+```
+
 FROM cloudfoundry/lamb-ci-base
 
 ADD https://raw.githubusercontent.com/pivotal-cf-experimental/docker-technology-scripts/master/install_ruby2-1-2.sh /tmp/install_ruby.sh
 RUN chmod 755 /tmp/install_ruby.sh
 RUN /tmp/install_ruby.sh
+
+ADD https://raw.githubusercontent.com/pivotal-cf-experimental/docker-technology-scripts/master/install_bosh_cli.sh /tmp/install_bosh_cli.sh
+RUN chmod 755 /tmp/install_bosh_cli.sh
+RUN /tmp/install_bosh_cli.sh
+
+```
 
 This is still an idea in motion. If you have questions or comments, please let us know.
