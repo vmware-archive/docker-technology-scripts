@@ -38,4 +38,6 @@ else
   exit 1
 fi
 
+ln -s /usr/local/bin/$OPENJDK8/bin/java /usr/local/bin/
+
 rm -rf /tmp/$OPENJDK8
