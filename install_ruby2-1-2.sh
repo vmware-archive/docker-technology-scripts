@@ -1,5 +1,8 @@
 #!/bin/bash -ex
 
+apt-get update
+apt-get install -y wget
+
 cd /tmp
 rm -rf ruby-installer
 mkdir ruby-installer
