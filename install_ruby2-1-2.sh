@@ -1,7 +1,7 @@
 #!/bin/bash -ex
 
 apt-get update
-apt-get install -y wget
+apt-get install -y wget build-essential autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev zlib1g-dev libncurses5-dev
 
 cd /tmp
 rm -rf ruby-installer
@@ -16,4 +16,6 @@ echo "installed ruby interpreter, version:"
 echo `ruby -v`
 gem install bundler --no-ri --no-rdoc
 echo "installed bundler"
-rm -rf /tmp/ruby-installer
+
+apt-get clean
+rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
