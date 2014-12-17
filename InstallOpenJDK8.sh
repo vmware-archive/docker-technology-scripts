@@ -1,5 +1,9 @@
 #!/bin/bash -ex
 
+apt-get update
+
+apt-get install -y curl wget
+
 OPENJDK8=openjdk-1.8
 
 cd /tmp
@@ -40,4 +44,4 @@ fi
 
 ln -s /usr/local/bin/$OPENJDK8/bin/java /usr/local/bin/
 
-rm -rf /tmp/$OPENJDK8
+apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
